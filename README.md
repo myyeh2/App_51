@@ -68,7 +68,7 @@ $$y(t) =
 \end{Bmatrix}
 $$ 
 
-### $$條 \quad 件 \quad ： \quad t \geq 0 \quad And \quad t \leq \quad 2 \times \pi$$  
+### $$條 \quad 件 \quad ： \quad t \geq 0 \quad 且 \quad t \leq \quad 2 \times \pi$$  
 
 ##  [參見 : https://www.nature.com/articles/s41588-020-72193-2](https://www.nature.com/articles/s41598-020-72193-2)    
 
@@ -78,7 +78,7 @@ $$
 #
 # $$結\quad論\quad如\quad下：$$
 
-### **1. $\quad$y是輸出響應值，參見本儲存庫"時間與振幅圖.pnd"檔案。** 
+### **1. $\quad$訊號輸出響應值y，參見本儲存庫"時間與振幅圖.pnd"檔案。** 
 
 ### **2. $\quad$已知角頻率是時間的變數(Time Variant)。**
 
