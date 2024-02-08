@@ -42,7 +42,7 @@
   
 <!--         ##### \[ Part \; 1 \]    -->   
 <!--    ![](Images/11-30-09.png)     -->   
-##### $$Part \; 3$$
+##### $$Part \quad 3$$
 
 ####
 
@@ -50,9 +50,9 @@
 
 # $$時\quad頻\quad數\quad值\quad計\quad算$$   
 
-### $$ Precisely \quad Time-Frequency \quad Numerical \quad Computations $$  
+### $$Precisely \quad Time-Frequency \quad Numerical \quad Computations$$  
 
-# $$本實例程式碼\;請參見本儲存庫$$ 
+# $$本實例程式碼\quad請參見本儲存庫$$ 
 
 ## $$已知實例如下 ：$$
 
@@ -62,11 +62,11 @@
 
 ##  [參見 : https://www.nature.com/articles/s41588-020-72193-2](https://www.nature.com/articles/s41598-020-72193-2)    
 
-#####  $https://www.nature.com/articles/s41598-020-72193-2$   
+####  https://www.nature.com/articles/s41598-020-72193-2     
 
 
 #
-# **結$\quad$論$\quad$如$\quad$下 ：**
+# **$\quad$結$\quad$論$\quad$如$\quad$下 ：**
 
 ### **1. $\quad$y是輸出響應值，參見本儲存庫"時間與振幅圖.pnd"檔案。** 
 
@@ -78,7 +78,7 @@
 
 ### **5. $\quad$使用Hexp(D, Q, t)轉換矩陣【系由本人推導並以CSharp程式碼撰寫】，惟本實例無須使用到。**
 
-### **6. $\quad$求得多個不同狀態變數的響應值，參見$\;$App_6J ... App_48$\;$儲存庫中的程式碼**
+### **6. $\quad$求得多個不同狀態變數的響應值，參見$\quad$App_6J ... App_48$\quad$儲存庫中的程式碼**
 
 
 ###  
