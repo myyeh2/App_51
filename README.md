@@ -56,9 +56,19 @@
 
 ## $$已知實例如下 ：$$
 
-## $$y(t) = \begin{Bmatrix} 2 \times t \\\\ \cos(10 \times t^2 + 100 \times t) \\\\  \cos(60 \times t) \\\\ \cos(40 \times t) \\\\ \cos(t^2 + 20 \times t) \\\\ \cos(0.5 \times t^2 + 5 \times t) \\\\ 1.0 \end{Bmatrix}$$
+$$y(t) = 
+\begin{Bmatrix} 
+2 \times t \\\\ 
+\cos(10 \times t^2 + 100 \times t) \\\\  
+\cos(60 \times t) \\\\ 
+\cos(40 \times t) \\\\ 
+\cos(t^2 + 20 \times t) \\\\ 
+\cos(0.5 \times t^2 + 5 \times t) \\\\ 
+1.0 
+\end{Bmatrix}
+$$ 
 
-#### $$條 \quad 件 \quad ： \quad t \geq 0 \quad And \quad t \leq \quad 2 \times \pi$$  
+### $$條 \quad 件 \quad ： \quad t \geq 0 \quad And \quad t \leq \quad 2 \times \pi$$  
 
 ##  [參見 : https://www.nature.com/articles/s41588-020-72193-2](https://www.nature.com/articles/s41598-020-72193-2)    
 
@@ -66,7 +76,7 @@
 
 
 #
-# **$\quad$結$\quad$論$\quad$如$\quad$下 ：**
+# $$結\quad論\quad如\quad下：$$
 
 ### **1. $\quad$y是輸出響應值，參見本儲存庫"時間與振幅圖.pnd"檔案。** 
 
@@ -78,7 +88,7 @@
 
 ### **5. $\quad$使用Hexp(D, Q, t)轉換矩陣【系由本人推導並以CSharp程式碼撰寫】，惟本實例無須使用到。**
 
-### **6. $\quad$求得多個不同狀態變數的響應值，參見$\quad$App_6J ... App_48$\quad$儲存庫中的程式碼**
+### **6. $\quad$求得多個不同狀態變數的響應值，參見App_6J ... App_48儲存庫中的程式碼**
 
 
 ###  
