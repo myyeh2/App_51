@@ -19,30 +19,27 @@
 -->
 ![](Images/11-30-01.png)    
 
- 
 <!--     ##### \[ using \]   -->
-<!--  ![](Images/11-30-07.png)  -->   
-##### $$using$$
+![](Images/11-30-07.png)  
+<!--    ##### $$using$$   -->  
 
 <!--   
 ## \[  \color{Red} Precisely \; Numerical \; Value \; Computations  \]  
 -->  
-![](Images/11-30-02.png) 
+![](Images/11-30-02.png)  
 
-  
-<!--     ##### \[ with \]   -->   
-<!--    ![](Images/11-30-08.png)   -->   
-##### $$with$$
+<!--     ##### \[ with \]   -->  
+![](Images/11-30-08.png)  
+<!--   ##### $$with$$  -->  
 
 <!--   
 ## \[{ \color{Green} Real \; \color{Red} And \; \color{magenta} Complex \quad \; \color{Brown} Matrix \;\; Transform  }\] 
 -->
 ![](Images/11-30-03.png)  
 
-  
-<!--         ##### \[ Part \; 1 \]    -->   
-<!--    ![](Images/11-30-09.png)     -->   
-##### $$Part \quad 3$$
+<!--         ##### \[ Part \; 1 \]    -->  
+<!--    ![](Images/11-30-09.png)     -->  
+<!--     ##### $$Part \quad 3$$    -->  
 
 ####
 
