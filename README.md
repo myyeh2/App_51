@@ -64,14 +64,17 @@
 ![](Images/24-10-12-2.png)  
 
 ## [參見 : https://www.nature.com/articles/s41588-020-72193-2](https://www.nature.com/articles/s41598-020-72193-2)  
+![](Images/Asterisk_02.png)
+![](Images/25-05-03-01.png)
+![](Images/Asterisk_02.png)
 
-####  https://www.nature.com/articles/s41598-020-72193-2  
+##  https://www.nature.com/articles/s41598-020-72193-2
 
-#  
+![](Images/Asterisk_01.png)
 
 <!--       
 # \[{ \color{Olive} 結\quad論\quad如\quad下：}\]  
--->    
+-->
 ![](Images/24-10-12-3.png)  
 
 ### **1...訊號輸出響應值y，參見本儲存庫"時間與振幅圖.pnd"檔案。** 
@@ -82,18 +85,14 @@
 
 ### **4...本實例的頻率為已知，係人工自行設定，是實數但隨時間而變化，故沒有特徵值為複數的狀況。**  
 
-### **5...使用Hexp(D, Q, t)轉換矩陣【系由本人推導並以CSharp程式碼撰寫】，惟本實例無須使用到。**
+### **5...使用Hexp(D, Q, t)轉換矩陣【系由本人推導並以CSharp程式碼撰寫】，惟本實例無須使用到轉換矩陣Hexp(D, Q, t)，因為響應值y(t)設定為已知時變數。**
 
 ### **6...求得多個不同狀態變數的響應值，參見App_6J ... App_48儲存庫中的程式碼**
 
 ###  
 
----  
-
-###  
+![](Images/Asterisk_01.png)
 
 ![](Images/name_card.png)  
 
-##  
-
-##  
+---
