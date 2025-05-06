@@ -1,96 +1,81 @@
-﻿
-// 參考 https://www.nature.com/articles/s41598-020-72193-2 
-// 其中的實例， y(t) = 2t + cos(10t^2 + 100t) + cos(60t) + 
-// cos(40t) + cos(t^2 + 20t) + cos(0.5t^2 + 5t) + 1  
-// t可以無限大，但t有循環， 其週期是2 * PI。
+﻿// 參考 https://www.nature.com/articles/s41598-020-72193-2 
+// y(t) = 2t + cos(10t^2 + 100t) + cos(60t) + cos(40t) + 
+// cos(t^2 + 20t) + cos(0.5t^2 + 5t) + 1;  0 <= t < inf。
+// ***   但程式使用20.5秒的循環  ***  
 
+using Matrix_0;
 
-using System;
-using Matrix_0; 
+double step = 0.5; 
+int iNum = (int)(70/step) + 1; 
+ReMatrix Mat = new ReMatrix(iNum, 2); 
 
-namespace ConsoleApp51
+for(int i = 0; i != iNum; i++)
 {
-	internal class Program
-	{
-		static void Main(string[] args)
-		{
+    double tTemp = step * i;
+    double[,] tTemp2 = { {tTemp} };
+    Mat[i, 0] = tTemp2;
 
-	double step = 0.97;
-	ReMatrix y;
-	int iNum = (int)(17.75 / step);
-	ReMatrix Mat = new ReMatrix(iNum, 2);
-
-	for (int i = 0; i != iNum; i++)
-	{
-		double tTemp = step * i;
-		// 第二個參數為0，表示時間的循環週期是 2 * PI 。
-		Remainder Rem = new Remainder(tTemp, 0);  
-		double t = Rem.Value;
-		double[,] t2 = { { t } };
-		ReMatrix tMat = (ReMatrix)t2;
-
-		double[,] y0 = { { 2 * t } }; 
-		double[,] y1 = { { Math.Cos(10 * t * t + 100 * t) } };
-		double[,] y2 = { { Math.Cos(60 * t) } };
-		double[,] y3 = { { Math.Cos(40 * t) } }; 
-		double[,] y4 = { { Math.Cos(t * t + 20 * t) } }; 
-		double[,] y5 = { { Math.Cos(0.5 * t * t + 5 * t) } }; 
-		double[,] y6 = { { 1 } }; 
-		y = (ReMatrix)y0 + y1 + y2 + y3 + y4 + y5 + y6;
-
-		Mat[i, 0] = tMat;
-		Mat[i, 1] = y;
-	}
-	Console.WriteLine("**  時頻分析【輸出數值結果】(方法一)  **\n");
-	Console.WriteLine("       t <= 2 * PI        y(振幅）   \n");
-	Console.WriteLine("\n{0}\n", new PR(Mat));
-
-	Console.WriteLine("\n======================================\n\n"); 
-
-	for(int i = 0; i != iNum; i++)
-	{
-		double tTemp = step * i;
-
-		// 第二個參數為0，表示時間最大為 2 * PI 循環。
-		Remainder Rem = new Remainder(tTemp, 0);
-		double t = Rem.Value;
-		double[,] t2 = { { t } };
-		ReMatrix tMat = (ReMatrix)t2;
-
-		double[,] y0 = { { 2 * t } }; 
-		double[,] y1 = { { Math.Cos(10 * t * t + 100 * t) } };
-		double[,] y2 = { { Math.Cos(60 * t) } };
-		double[,] y3 = { { Math.Cos(40 * t) } }; 
-		double[,] y4 = { { Math.Cos(t * t + 20 * t) } };
-		double[,] y5 = { { Math.Cos(0.5 * t * t + 5 * t) } };
-		double[,] y6 = { { 1 } };
-
-		// D 為特徵值(7X7)矩陣。
-		ReMatrix D = new ReMatrix(7, 7);
-		D[0, 0] = (ReMatrix)y0;
-		D[1, 1] = (ReMatrix)y1;
-		D[2, 2] = (ReMatrix)y2;
-		D[3, 3] = (ReMatrix)y3;
-		D[4, 4] = (ReMatrix)y4;
-		D[5, 5] = (ReMatrix)y5;
-		D[6, 6] = (ReMatrix)y6;
-		// Q 為特徵向量(7X7)矩陣。
-		Iden I = new Iden(7, 7); 
-		ReMatrix Q = I.Matrix; 
-		// d 為係數向量。
-		double[,] d = { {1}, {1}, {1}, {1}, {1}, {1}, {1} }; 
-		y = Q * D * d; 
-		y = y[0, 0] + y[1, 0] + y[2, 0] + y[3, 0] + y[4, 0] + y[5, 0] + y[6, 0]; 
-
-		Mat[i, 0] = tMat; 
-		Mat[i, 1] = y;
-	}
-	Console.WriteLine("**  時頻分析【輸出數值結果】(方法二)  **\n");
-	Console.WriteLine("       t <= 2 * PI        y(振幅）   \n");
-	Console.WriteLine("\n{0}\n", new PR(Mat));
-
-		}
-	}
+    // 循環為20.5秒
+    Remainder rem = new Remainder(tTemp, 20.5);
+    double t = rem.Value;
+    if(t >= 20.5)
+    {  
+        t = 0;  
+    }
+    double y2 = 2 * t + Math.Cos(10 * t * t + 100 * t) + Math.Cos(60 * t) 
+        + Math.Cos(40 * t) + Math.Cos(t * t + 20 * t) + 
+        Math.Cos(0.5 * t * t + 5 * t) + 1;
+    double[,] yTemp = { { y2} }; 
+    Mat[i, 1] = yTemp;
 }
+Console.Write("         t(時間)         y(振幅)   ");
+Console.Write("\n{0}", new PR(Mat));
+// 列印時間和位移序列
+Console.Write("\n時間序列\n{0}", new PR4(Mat, 0));
+Console.Write("\n位移序列\n{0}", new PR4(Mat, 1));
+//  END 
 
-// ***  數值的輸出結果，請參見儲存庫的C#程式碼。 *** 
+/*輸出結果:
+         t(時間)         y(振幅)
+        0.00000          6.00000
+        0.50000          0.39838
+        1.00000          0.54257
+        1.50000          1.61558
+        2.00000          7.87327
+            .
+            .
+            .
+            .
+       69.00000         15.53975
+       69.50000         15.97251
+       70.00000         17.17767
+
+時間序列
+   0.0000,    0.5000,    1.0000,    1.5000,    2.0000,
+   2.5000,    3.0000,    3.5000,    4.0000,    4.5000,
+            .
+            .
+            .
+            .
+  55.0000,   55.5000,   56.0000,   56.5000,   57.0000,
+  57.5000,   58.0000,   58.5000,   59.0000,   59.5000,
+  60.0000,   60.5000,   61.0000,   61.5000,   62.0000,
+  62.5000,   63.0000,   63.5000,   64.0000,   64.5000,
+  65.0000,   65.5000,   66.0000,   66.5000,   67.0000,
+  67.5000,   68.0000,   68.5000,   69.0000,   69.5000,
+  70.0000,
+
+位移序列
+   6.0000,    0.3984,         0.5426,         1.6156,         7.8733,
+   7.4324,    9.9086,         8.1288,         7.9063,        10.3634,
+  12.5661,   11.3545,        13.1146,        11.9916,        13.7465,
+  15.5397,   15.9725,        17.1777,        18.4677,        18.4684,
+            .
+            .
+            .
+            .
+   0.5426,    1.6156,         7.8733,         7.4324,         9.9086,
+   8.1288,    7.9063,        10.3634,        12.5661,        11.3545,
+  13.1146,   11.9916,        13.7465,        15.5397,        15.9725,
+  17.1777,
+*/
